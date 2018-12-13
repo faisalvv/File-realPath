@@ -1,20 +1,21 @@
 # File-realPath
 This is real path of selected files multiple or single file for file uploading 
 
+
+
   selectFile.setOnClickListener(new View.OnClickListener() {
-            @Override
+           @Override
             public void onClick(View v) {
                 bottomSheetDialog.dismiss();
                 Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
                 intent.setType("*/*");
-                //intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);//don't use the line. multiple image selector working not proper.
                 intent.addCategory(Intent.CATEGORY_OPENABLE);
                 intent.putExtra(Intent.EXTRA_LOCAL_ONLY, true);
                 try {
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) {
                         intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
                     }
-                    startActivityForResult(Intent.createChooser(intent, getResources().getString(R.string.chooser_title)),FILE_REQUEST_CODE);
+                    startActivityForResult(Intent.createChooser(intent,                             getResources().getString(R.string.chooser_title)),FILE_REQUEST_CODE);
                 } catch (Exception ex) {
                     System.out.println("browseClick :"+ex);//android.content.ActivityNotFoundException ex
                 }
