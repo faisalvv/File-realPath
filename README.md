@@ -3,7 +3,7 @@ This is real path of selected files multiple or single file for file uploading
 
 
 
-  selectFile.setOnClickListener(new View.OnClickListener() {
+        selectFile.setOnClickListener(new View.OnClickListener() {
            @Override
             public void onClick(View v) {
                 bottomSheetDialog.dismiss();
@@ -21,8 +21,6 @@ This is real path of selected files multiple or single file for file uploading
                 }
             }
         });
-        
-        
          @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
